@@ -145,7 +145,9 @@ template {
 [hidden] {
   display: none;
 }
+/*# sourceMappingURL=normalize.min.css.map */
 
+/* universal box sizing */
 *,
 *:before,
 *:after {
@@ -162,7 +164,7 @@ body {
   font-family: var(--font-family-base);
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-regular);
-  min-height: var(--line-height-base);
+  line-height: var(--line-height-base);
 }
 
 a:link {
@@ -179,7 +181,7 @@ a:hover {
 }
 
 a:active {
-  background-color: var(--color-ligth-grey);
+  background-color: var(--color-light-grey);
 }
 
 .visually-hidden {
@@ -188,6 +190,36 @@ a:active {
 
 .card-category {
   color: var(--color-primary);
+}
+
+/* set the padding on all 4 sides to section-padding */
+.section {
+  padding: var(--section-padding);
+}
+
+.section-header {
+  text-align: var(--section-header-align);
+  padding: var(--section-header-padding);
+}
+
+/* pad all 4 sides with section-body-padding */
+.section-body {
+  padding: var(--section-body-padding);
+}
+
+/* pad all 4 sides with section-footer-padding
+and set the horizontal alignment with section-footer-align */
+.section-footer {
+  padding: var(--section-footer-padding);
+  text-align: var(--section-footer-align);
+}
+
+.section-title {
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-xx-large);
+  font-weight: var(--font-weight-bold);
+  margin: var(--section-title-margin);
+  color: var(--section-title-color);
 }
 
 .section-tagline {
@@ -222,27 +254,22 @@ ul.row {
   padding: 0.5rem;
 }
 
+/* wide and evenly distribute the margins
+on both the left and and right side */
 .container {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.section-title {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-family-title);
-  font-size: var(--font-size-xx-large);
   font-weight: var(--font-weight-bold);
-  margin: var(--section-title-margin);
-  color: var(--section-title-color);
-}
-
-.section {
-  padding: var(--section-padding);
-}
-
-.section-header {
-  text-align: var(--section-header-align);
-  padding: var(--section-header-padding);
 }
 
 .navbar-menu {
@@ -265,53 +292,23 @@ ul.row {
   margin: var(--nav-item-margin);
 }
 
+/* If the padding property has two values:
+top and bottom are 0.5rem
+right and left are 1rem */
 .nav .nav-link {
   display: block;
   padding: 0.5rem 1rem;
 }
 
-.nav.nav-link:hover {
+.nav .nav-link:hover {
   color: var(--nav-item-link-hover);
-}
-
-.section-body {
-  padding: var(--section-body-padding);
-}
-
-.section-footer {
-  padding: var(--section-footer-padding);
-  text-align: var(--section-footer-align);
-}
-
-.footer {
-  padding: var(--footer-padding);
-}
-
-.footer-copyright {
-  margin: 0;
-  font-size: var(--font-size-small);
-  color: var(--text-color);
-}
-
-.footer ul {
-  text-align: right;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-family-title);
-  font-weight: var(--font-weight-bold);
 }
 
 :root {
   --color-primary: #d73953;
   --color-black: #090909;
   --color-white: #ffffff;
-  --color-ligth-grey: #f3f3f3;
+  --color-light-grey: #f3f3f3;
   --color-dark-grey: #353535;
   --text-color: var(--color-black);
   --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial,
@@ -345,4 +342,19 @@ h6 {
   --nav-item-margin: 0 0 3rem 0;
   --nav-item-link-hover: var(--color-primary);
   --section-tagline-margin: 0;
+}
+
+.footer-copyright {
+  margin: 0;
+  font-size: var(--font-size-small);
+  color: var(--text-color);
+}
+
+.footer ul {
+  text-align: right;
+}
+
+/* pad all 4 sides of the selected element with footer-padding */
+.footer {
+  padding: var(--footer-padding);
 }
