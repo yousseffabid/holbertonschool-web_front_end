@@ -210,6 +210,8 @@ a:active {
   color: var(--button-hover-color);
   text-decoration: var(--button-hover-text-decoration);
   background: var(--button-hover-background);
+  transition-duration: var(--transition-duration);
+  transition-property: color, background-color;
 }
 
 .visually-hidden {
@@ -320,6 +322,7 @@ ul.row {
   background-color: var(--color-white);
   width: 0;
   height: 0.2rem;
+  transition: var(--transition-duration) var(--transition-cubic-bezier);
 }
 
 .nav .nav-item:hover .nav-link::before {
@@ -341,6 +344,67 @@ ul.row {
 
 .section-hero .section-inner {
   padding: 10rem 40rem 2rem 0;
+}
+
+.card-work .card-outer {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-work:hover .card-outer {
+  transform: scale(0.95);
+}
+
+.card-work .card-image img {
+  height: 30rem;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+.card-work:hover .card-image {
+  transform: scale(1.2);
+  transition: var(--transition-duration) var(--transition-cubic-bezier);
+}
+
+.card-work .card-inner {
+  position: absolute;
+  top: -0.1rem;
+  left: -0.1rem;
+  right: -0.1rem;
+  z-index: 1;
+  transition: var(--transition-duration) var(--transition-cubic-bezier);
+}
+
+.card-work:hover .card-inner {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.card-work .card-title {
+  text-align: center;
+  margin: 0;
+  opacity: 0;
+  height: 100%;
+  position: relative;
+}
+
+.card-work .card-title a {
+  display: block;
+  text-decoration: none;
+  padding-top: 45%;
+}
+
+.card-work .card-title a::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+}
+
+.card-work:hover .card-title {
+  opacity: 1;
 }
 
 .card-services .card-title {
@@ -375,27 +439,18 @@ ul.row {
   color: var(--color-primary);
 }
 
-.section-footer {
-  padding: var(--section-footer-padding);
-  text-align: var(--section-footer-align);
+.card-testimonial .card-quote {
+  position: relative;
 }
 
-.footer {
-  padding: var(--footer-padding);
-}
-
-.footer-copyright {
-  margin: 0;
-  font-size: var(--font-size-small);
-  color: var(--text-color);
-}
-
-.footer ul {
-  text-align: right;
-}
-
-.footer-address {
-  color: var(--text-color);
+.card-testimonial .card-quote::before {
+  content: "\201C";
+  position: absolute;
+  top: -4.5rem;
+  left: -1rem;
+  color: #efeded;
+  font-size: 10rem;
+  z-index: -1;
 }
 
 .social-link {
@@ -492,4 +547,6 @@ h6 {
   --header-logo-link-position: absolute;
   --header-logo-link-top: -1rem;
   --header-logo-link-left: 0;
+  --transition-duration: 0.3s;
+  --transition-cubic-bezier: cubic-bezier(0.17, 0.67, 0, 1.01);
 }
