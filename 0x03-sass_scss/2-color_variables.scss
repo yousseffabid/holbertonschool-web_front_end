@@ -1,0 +1,22 @@
+/* assigns:
+
+    The text color #3D3D3D to the HTML tags body and p
+    The background color #6D6D6D to the HTML tags body and h2
+    You must use 2 Sass variables
+ */
+
+$text_color: #3d3d3d;
+$background_color: #6d6d6d;
+
+body {
+  color: $text_color;
+  background-color: $background_color;
+}
+
+p {
+  color: $text_color;
+}
+
+h2 {
+  background-color: $background_color;
+}

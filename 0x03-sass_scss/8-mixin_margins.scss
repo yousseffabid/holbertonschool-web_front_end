@@ -1,0 +1,19 @@
+/* assigns:
+
+    Margin left and right at 10px to body tags
+    Margin left and right at 15px to div tags
+    You must use a mixin
+ */
+
+@mixin my_margin($m: 0px) {
+  margin-left: $m;
+  margin-right: $m;
+}
+
+body {
+  @include my_margin(10px);
+}
+
+div {
+  @include my_margin(15px);
+}
